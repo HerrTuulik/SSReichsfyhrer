@@ -1,9 +1,131 @@
-﻿<Window x:Class="Kalkulaator1.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Kalkulaator1" x:Class="Kalkulaator1.MainWindow"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="KolmnurkNupp" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path Data="M235,104 L198.5,164.5 253.5,174.5 z" Fill="#FFF4F4F5" Stretch="Fill" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid OpacityMask="Black">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20*"/>
+                                <RowDefinition Height="33*"/>
+                            </Grid.RowDefinitions>
+                            <Path Data="M40,171 L92.5,170.5 C92.5,170.5 67.5,119.5 67.5,119.5 38.5,171.5 40,171 40,171 z" Fill="#FFF4F4F5" Stretch="Fill" Stroke="Black" Grid.RowSpan="2"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="10,17.04,7.889,0" Grid.Row="1"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RingNupp" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Fill="#FFF4F4F5" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RuutNupp" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="#FFF4F4F5" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ristkylikNupp" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="{TemplateBinding Background}" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="50,54,0,0" VerticalAlignment="Top" Width="73" Click="Button_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Chalkboard-background.jpg"/>
+        </Grid.Background>
+        <Button Content="&#xD;&#xA;&#xD;&#xA;RUUT" HorizontalAlignment="Left" Height="57" Margin="25,244,0,0" Style="{DynamicResource RuutNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil"/>
+        <Button Content="&#xD;&#xA;&#xD;&#xA;Ring&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="25,167,0,0" Style="{DynamicResource RingNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil"/>
+        <Button Content="Kolmnurk" HorizontalAlignment="Left" Height="63" Margin="10,84,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="#FF6E3131" BorderBrush="White"/>
+        <Button Content="&#xD;&#xA;&#xD;&#xA;Ristkylik" HorizontalAlignment="Left" Height="62" Margin="10,10,0,0" Style="{DynamicResource ristkylikNupp}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="White"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="149,15,0,0" TextWrapping="Wrap" Text="Valige üks kujund" VerticalAlignment="Top" Width="138"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="149,45,0,0" TextWrapping="Wrap" Text="Sisestage andmed" VerticalAlignment="Top" Width="138"/>
+        <StackPanel HorizontalAlignment="Left" Height="84" Margin="330,45,0,0" VerticalAlignment="Top" Width="100">
+            <Label Content="Kaatet 1"/>
+            <Label Content="Kaatet 2"/>
+            <Label Content="Hüpotenuus"/>
+        </StackPanel>
+        <StackPanel x:Name="ristkylik" HorizontalAlignment="Left" Height="100" Margin="330,205,0,0" VerticalAlignment="Top" Width="100">
+            <Label Content="Pikkus"/>
+            <Label Content="Laius"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="56" Margin="330,149,0,0" VerticalAlignment="Top" Width="100">
+            <Label Content="Raadius"/>
+        </StackPanel>
 
     </Grid>
 </Window>
