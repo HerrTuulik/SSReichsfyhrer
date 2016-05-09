@@ -103,29 +103,62 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="Arvuta" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path Data="M183,250 L218.5,249.5 234.5,223.5 218.5,201.5 179.5,202.5 163.5,227.5" Fill="#FFF4F4F5" Stretch="Fill" Stroke="Black"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="pack://siteoforigin:,,,/Chalkboard-background.jpg"/>
         </Grid.Background>
-        <Button Content="&#xD;&#xA;&#xD;&#xA;RUUT" HorizontalAlignment="Left" Height="57" Margin="25,244,0,0" Style="{DynamicResource RuutNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil"/>
-        <Button Content="&#xD;&#xA;&#xD;&#xA;Ring&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="25,167,0,0" Style="{DynamicResource RingNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil"/>
-        <Button Content="Kolmnurk" HorizontalAlignment="Left" Height="63" Margin="10,84,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="#FF6E3131" BorderBrush="White"/>
-        <Button Content="&#xD;&#xA;&#xD;&#xA;Ristkylik" HorizontalAlignment="Left" Height="62" Margin="10,10,0,0" Style="{DynamicResource ristkylikNupp}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="White"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="149,15,0,0" TextWrapping="Wrap" Text="Valige üks kujund" VerticalAlignment="Top" Width="138"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="149,45,0,0" TextWrapping="Wrap" Text="Sisestage andmed" VerticalAlignment="Top" Width="138"/>
-        <StackPanel HorizontalAlignment="Left" Height="84" Margin="330,45,0,0" VerticalAlignment="Top" Width="100">
-            <Label Content="Kaatet 1"/>
-            <Label Content="Kaatet 2"/>
-            <Label Content="Hüpotenuus"/>
+        <Button x:Name="Ruut" Content="&#xD;&#xA;&#xD;&#xA;RUUT" HorizontalAlignment="Left" Height="57" Margin="25,244,0,0" Style="{DynamicResource RuutNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil" Click="Button_Click_1"/>
+        <Button x:Name="Ring" Content="&#xD;&#xA;&#xD;&#xA;Ring&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="25,167,0,0" Style="{DynamicResource RingNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil" Click="Ring_Click"/>
+        <Button x:Name="Kolmnurk" Content="Kolmnurk" HorizontalAlignment="Left" Height="63" Margin="10,84,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="#FF6E3131" BorderBrush="White" Click="Kolmnurk_Click"/>
+        <Button x:Name="Ristkylik" Content="&#xA;&#xA;RistkÜlik" HorizontalAlignment="Left" Height="62" Margin="10,10,0,0" Style="{DynamicResource ristkylikNupp}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="White" Click="Ristkylik_Click"/>
+        <StackPanel HorizontalAlignment="Left" Height="84" Margin="146,115,0,0" VerticalAlignment="Top" Width="100">
+            <Label x:Name="Kaatet1" Content="Kaatet 1" FontFamily="Stencil"/>
+            <Label x:Name="Kaatet2" Content="Kaatet 2" FontFamily="Stencil"/>
+            <Label x:Name="Hypotenuus" Content="Hüpotenuus" FontFamily="Stencil"/>
         </StackPanel>
-        <StackPanel x:Name="ristkylik" HorizontalAlignment="Left" Height="100" Margin="330,205,0,0" VerticalAlignment="Top" Width="100">
-            <Label Content="Pikkus"/>
-            <Label Content="Laius"/>
+        <StackPanel x:Name="StackpanelRuutRistkylik" HorizontalAlignment="Left" Height="61" Margin="146,108,0,0" VerticalAlignment="Top" Width="100">
+            <Label x:Name="Pikkus" Content="Pikkus" FontFamily="Stencil"/>
+            <Label x:Name="Laius" Content="Laius" FontFamily="Stencil"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="56" Margin="330,149,0,0" VerticalAlignment="Top" Width="100">
-            <Label Content="Raadius"/>
+        <StackPanel HorizontalAlignment="Left" Height="56" Margin="146,108,0,0" VerticalAlignment="Top" Width="100">
+            <Label x:Name="Raadius" Content="Raadius" FontFamily="Stencil"/>
         </StackPanel>
+        <TextBox x:Name="Andmed1" HorizontalAlignment="Left" Height="23" Margin="246,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Andmed2" HorizontalAlignment="Left" Height="23" Margin="246,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Andmed3" HorizontalAlignment="Left" Height="23" Margin="246,155,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="ValiKujund" HorizontalAlignment="Left" Margin="146,10,0,0" TextWrapping="Wrap" Text="Valige Üks Kujund" VerticalAlignment="Top" FontFamily="Stencil" FontSize="16" Background="Red" Height="37"/>
+        <TextBlock x:Name="SisestageAndmed" HorizontalAlignment="Left" Margin="146,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Stencil" FontSize="16" Background="#FF1C6F81" Width="156.363"><Run Text="Sisestage andmed"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="Pindala" HorizontalAlignment="Left" Height="23" Margin="246,224,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Ymbermoot" HorizontalAlignment="Left" Height="23" Margin="246,249,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="PindalaLabel" Content="Pindala" HorizontalAlignment="Left" Margin="146,225,0,0" VerticalAlignment="Top" FontFamily="Stencil"/>
+        <Label x:Name="YmbermootLabel" Content="Ymbermoot" HorizontalAlignment="Left" Margin="146,249,0,0" VerticalAlignment="Top" FontFamily="Stencil"/>
+        <Button x:Name="ArvutaRing" Content="Arvuta" HorizontalAlignment="Left" Margin="413,236,0,0" VerticalAlignment="Top" Width="75" FontFamily="Stencil" Click="ArvutaRing_Click"/>
+        <Button x:Name="ArvutaKolmnurk" Content="Arvuta" HorizontalAlignment="Left" Margin="413,236,0,0" VerticalAlignment="Top" Width="75" FontFamily="Stencil" Click="ArvutaKolmnurk_Click"/>
+        <Button x:Name="ArvutaRuut" Content="ARVUTA" HorizontalAlignment="Left" Margin="413,236,0,0" VerticalAlignment="Top" Width="75" Click="ArvutaRuut_Click" FontFamily="Stencil"/>
+        <Button x:Name="ArvutaRistkylik" Content="ARVUTA" HorizontalAlignment="Left" Margin="413,236,0,0" VerticalAlignment="Top" Width="75" Click="ArvutaRistkylik_Click_1" FontFamily="Stencil"/>
+        <Label x:Name="KõrgusLabel" Content="Kõrgus&#xD;&#xA;" HorizontalAlignment="Left" Margin="146,184,0,0" VerticalAlignment="Top" FontFamily="Stencil"/>
+        <TextBox x:Name="Andmed4" HorizontalAlignment="Left" Height="23" Margin="246,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Ringjoonepikkus" Content="Ringjoonepikkus" HorizontalAlignment="Left" Margin="108,247,0,0" VerticalAlignment="Top" FontFamily="Stencil"/>
 
     </Grid>
 </Window>
