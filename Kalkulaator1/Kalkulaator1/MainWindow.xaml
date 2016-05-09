@@ -105,27 +105,34 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="287*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="pack://siteoforigin:,,,/Chalkboard-background.jpg"/>
         </Grid.Background>
         <Button Content="&#xD;&#xA;&#xD;&#xA;RUUT" HorizontalAlignment="Left" Height="57" Margin="25,244,0,0" Style="{DynamicResource RuutNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil"/>
         <Button Content="&#xD;&#xA;&#xD;&#xA;Ring&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="25,167,0,0" Style="{DynamicResource RingNupp}" VerticalAlignment="Top" Width="61" FontFamily="Stencil"/>
-        <Button Content="Kolmnurk" HorizontalAlignment="Left" Height="63" Margin="10,84,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="#FF6E3131" BorderBrush="White"/>
-        <Button Content="&#xD;&#xA;&#xD;&#xA;Ristkylik" HorizontalAlignment="Left" Height="62" Margin="10,10,0,0" Style="{DynamicResource ristkylikNupp}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="White"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="149,15,0,0" TextWrapping="Wrap" Text="Valige üks kujund" VerticalAlignment="Top" Width="138"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="149,45,0,0" TextWrapping="Wrap" Text="Sisestage andmed" VerticalAlignment="Top" Width="138"/>
-        <StackPanel HorizontalAlignment="Left" Height="84" Margin="330,45,0,0" VerticalAlignment="Top" Width="100">
-            <Label Content="Kaatet 1"/>
-            <Label Content="Kaatet 2"/>
-            <Label Content="Hüpotenuus"/>
+        <Button Content="Kolmnurk" HorizontalAlignment="Left" Height="63" Margin="10,84,0,0" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="#FF25D1AA" BorderBrush="White" Foreground="#FF040303"/>
+        <Button x:Name="Ristkylik" Content="&#xD;&#xA;&#xD;&#xA;Ristkylik" HorizontalAlignment="Left" Height="62" Margin="10,10,0,0" Style="{DynamicResource ristkylikNupp}" VerticalAlignment="Top" Width="91" FontFamily="Stencil" Background="#FFE4E4E4" Foreground="#FF040202" Click="Button_Click_1"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="149,15,0,0" TextWrapping="Wrap" Text="Valige üks kujund" VerticalAlignment="Top" Width="138" FontFamily="Stencil" Background="#FF526CC5" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="SisestageAndmed" HorizontalAlignment="Left" Height="18" Margin="149,45,0,0" TextWrapping="Wrap" Text="Sisestage andmed" VerticalAlignment="Top" Width="138" FontFamily="Stencil" Background="#FFA63434" Grid.ColumnSpan="2"/>
+        <StackPanel HorizontalAlignment="Left" Height="84" Margin="149,84,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
+            <Label x:Name="Kaatet1" Content="Kaatet 1"/>
+            <Label x:Name="Kaatet2" Content="Kaatet 2"/>
+            <Label x:Name="Hypotenuus" Content="Hüpotenuus"/>
         </StackPanel>
-        <StackPanel x:Name="ristkylik" HorizontalAlignment="Left" Height="100" Margin="330,205,0,0" VerticalAlignment="Top" Width="100">
-            <Label Content="Pikkus"/>
-            <Label Content="Laius"/>
+        <StackPanel x:Name="ristkylik" HorizontalAlignment="Left" Height="55" Margin="149,84,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
+            <Label x:Name="Pikkus" Content="Pikkus"/>
+            <Label x:Name="Laius" Content="Laius"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="56" Margin="330,149,0,0" VerticalAlignment="Top" Width="100">
-            <Label Content="Raadius"/>
+        <StackPanel HorizontalAlignment="Left" Height="28" Margin="149,84,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2">
+            <Label x:Name="Raadius" Content="Raadius"/>
         </StackPanel>
+        <TextBox x:Name="Laius1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="57,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.358,-0.217"/>
+        <TextBox x:Name="Pikkus1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="57,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Hypotenuus1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="57,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

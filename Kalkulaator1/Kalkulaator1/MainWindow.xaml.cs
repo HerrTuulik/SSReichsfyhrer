@@ -23,11 +23,25 @@ namespace Kalkulaator1
         public MainWindow()
         {
             InitializeComponent();
+            Kaatet1.Visibility = Visibility.Hidden;
+            Kaatet2.Visibility = Visibility.Hidden;
+            Hypotenuus.Visibility = Visibility.Hidden;
+            Raadius.Visibility = Visibility.Hidden;
+            Laius.Visibility = Visibility.Hidden;
+            Pikkus.Visibility = Visibility.Hidden;
+            SisestageAndmed.Visibility = Visibility.Hidden;
+            Pikkus1.Visibility = Visibility.Hidden;
+            Laius1.Visibility = Visibility.Hidden;
+            Hypotenuus1.Visibility = Visibility.Hidden;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Mida sa tegid!!! ME SUREME!");
+            Pikkus.Visibility = Visibility.Visible;
+            Pikkus1.Visibility = Visibility.Visible;
+            Laius.Visibility = Visibility.Visible;
+            Laius1.Visibility = Visibility.Visible;
         }
+
     }
 }
