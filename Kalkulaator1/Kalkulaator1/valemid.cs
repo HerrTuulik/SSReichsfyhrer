@@ -36,16 +36,16 @@ namespace Kalkulaator1
         public string KolmnurgaÜmbermõõt(double kaatet1, double kaatet2, double hüpotenuus)
         {
             return kaatet1 + kaatet2 + hüpotenuus + " cm";
-        }
+        } 
 
         // Ring
         public string RingiPindala(double raadius)
         {
-            return Math.PI * Math.Pow(raadius, 2) + " cm²";
+            return Math.Round(Math.PI, 2) * Math.Pow(raadius, 2) + " cm²";
         }
         public string RingjoonePikkus(double raadius)
         {
-            return 2 * Math.PI * raadius + " cm";
+            return 2 * Math.Round(Math.PI, 2) * raadius + " cm";
         }
     }
 }
