@@ -22,43 +22,43 @@ namespace Kalkulaator1
 
     public partial class MainWindow : Window
     {
-        public double RistkülikuPindala(double pikkus, double laius)
+        public string RistkülikuPindala(double pikkus, double laius)
         {
-            return pikkus * laius;
+            return pikkus * laius + " cm²";
         }
-        public double RistkülikuÜmbermõõt(double pikkus, double laius)
+        public string RistkülikuÜmbermõõt(double pikkus, double laius)
         {
-            return 2 * (pikkus + laius);
+            return 2 * (pikkus + laius) + " cm";
         }
 
         // Ruut
-        public double RuuduPindala(double pikkus)
+        public string RuuduPindala(double pikkus)
         {
-            return Math.Pow(pikkus, 2);
+            return Math.Pow(pikkus, 2) + " cm²";
         }
-        public double RuuduÜmbermõõt(double pikkus)
+        public string RuuduÜmbermõõt(double pikkus)
         {
-            return 4 * pikkus;
+            return 4 * pikkus +  "cm";
         }
 
         // Kolmnurk
-        public double KolmnurgaPindala(double alus, double kõrgus)
+        public string KolmnurgaPindala(double alus, double kõrgus)
         {
-            return (alus * kõrgus) / 2;
+            return (alus * kõrgus) / 2 + " cm²";
         }
-        public double KolmnurgaÜmbermõõt(double kaatet1, double kaatet2, double hüpotenuus)
+        public string KolmnurgaÜmbermõõt(double kaatet1, double kaatet2, double hüpotenuus)
         {
-            return kaatet1 + kaatet2 + hüpotenuus;
-        }
+            return kaatet1 + kaatet2 + hüpotenuus + " cm";
+        } 
 
         // Ring
-        public double RingiPindala(double raadius)
+        public string RingiPindala(double raadius)
         {
-            return Math.PI * Math.Pow(raadius, 2);
+            return Math.PI * Math.Pow(raadius, 2) + " cm²";
         }
-        public double RingjoonePikkus(double raadius)
+        public string RingjoonePikkus(double raadius)
         {
-            return 2 * Math.PI * raadius;
+            return 2 * Math.PI * raadius + " cm";
         }
         public void resetAll()
         {
