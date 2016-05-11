@@ -57,6 +57,7 @@
     <Compile Include="RingiNupp.xaml.cs">
       <DependentUpon>RingiNupp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="valemid.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
