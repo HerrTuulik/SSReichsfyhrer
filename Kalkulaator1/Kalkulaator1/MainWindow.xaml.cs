@@ -54,11 +54,12 @@ namespace Kalkulaator1
         // Ring
         public string RingiPindala(double raadius)
         {
-            return Math.PI * Math.Pow(raadius, 2) + " cm²";
+
+            return Math.Round(Math.PI * Math.Pow(raadius, 2), 2) + " cm²";
         }
         public string RingjoonePikkus(double raadius)
         {
-            return 2 * Math.PI * raadius + " cm";
+            return Math.Round(2 * Math.PI * raadius, 2) + " cm";
         }
         public void resetAll()
         {
