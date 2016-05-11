@@ -159,6 +159,7 @@
         <Label x:Name="KõrgusLabel" Content="Kõrgus&#xD;&#xA;" HorizontalAlignment="Left" Margin="146,184,0,0" VerticalAlignment="Top" FontFamily="Stencil"/>
         <TextBox x:Name="Andmed4" HorizontalAlignment="Left" Height="23" Margin="246,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="Ringjoonepikkus" Content="Ringjoonepikkus" HorizontalAlignment="Left" Margin="108,247,0,0" VerticalAlignment="Top" FontFamily="Stencil"/>
+        <TextBlock HorizontalAlignment="Left" Margin="328,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="189" FontFamily="Stencil"><Run Text="NB - "/><Run Text="Kõik väljad peavad täidetud olema"/><Run Text=" muidu paneb pange"/></TextBlock>
 
     </Grid>
 </Window>
