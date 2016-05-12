@@ -29,13 +29,28 @@ namespace Kalkulaator1
         }
 
         // Kolmnurk
-        public string KolmnurgaPindala(double alus, double kõrgus)
+        public string KolmnurgaPindala(double alus, double kaatet1, double kaatet2, double kõrgus, double hüpotenuus)
         {
-            return (alus * kõrgus) / 2 + " cm²";
+            if (kaatet1 + kaatet2 > hüpotenuus)
+            {
+                return (alus * kõrgus) / 2 + " cm²";
+            }
+            else
+            {
+                return "Sellist kolmnurka pole olemas.";
+            }
+            
         }
         public string KolmnurgaÜmbermõõt(double kaatet1, double kaatet2, double hüpotenuus)
         {
-            return kaatet1 + kaatet2 + hüpotenuus + " cm";
+            if (kaatet1 + kaatet2 > hüpotenuus)
+            {
+                return kaatet1 + kaatet2 + hüpotenuus + " cm";
+            }
+            else
+            {
+                return "Sellist kolmnurka pole olemas.";
+            }
         } 
 
         // Ring
