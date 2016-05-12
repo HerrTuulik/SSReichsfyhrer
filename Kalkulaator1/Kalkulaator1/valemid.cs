@@ -31,7 +31,12 @@ namespace Kalkulaator1
         // Kolmnurk
         public string KolmnurgaPindala(double alus, double kaatet1, double kaatet2, double kõrgus, double hüpotenuus)
         {
-            if (kaatet1 + kaatet2 > hüpotenuus)
+            if (String.IsNullOrEmpty(kõrgus))
+            {
+                MessageBox.Show("Palun sisesta kõrgus ja proovi uuesti.");
+                return;
+            }
+            else if (kaatet1 + kaatet2 > hüpotenuus)
             {
                 return (alus * kõrgus) / 2 + " cm²";
             }
